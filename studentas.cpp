@@ -3,7 +3,7 @@
 
 double mediana(std::vector<int> &v){
     size_t n = v.size();
-    std::sort(v.begin(), v.end());
+    sort(v.begin(), v.end());
     if (n % 2 == 0) {
         return (v[n/2 - 1] + v[n/2]) / 2.0;
     } else {
@@ -16,7 +16,7 @@ void input(Studentas &Lok){
     std::string input;
     bool praeitasBuvoTuscias = false;
 
-    std::cout << "Ar norite atsitiktinai generuoti sekančio studento balus? (0 arba 1):" << std::endl;
+    std::cout << "Ar atsitiktinai generuoti sekančio studento balus? (0 arba 1):" << std::endl;
     std::cin >> arRandom;
 
     std::cout << "Įveskite studento vardą ir pavardę:" << std::endl;
@@ -50,7 +50,6 @@ void input(Studentas &Lok){
         std::srand(std::time(0));
         Lok.egzamRez = rand() % 10 + 1;
         for (int i = 0; i < 5; i++){
-            std::srand(std::time(0));
             Lok.tarpRez.push_back(rand() % 10 + 1);
         }
     }
@@ -59,7 +58,7 @@ void input(Studentas &Lok){
 
 void output(Studentas Lok, int vidMed){
     if(vidMed == 0){
-        double vidurkis = (std::accumulate(Lok.tarpRez.begin(), Lok.tarpRez.end(), 0.0)+Lok.egzamRez)/(Lok.tarpRez.size() + 1);
+        double vidurkis = (accumulate(Lok.tarpRez.begin(), Lok.tarpRez.end(), 0.0)+Lok.egzamRez)/(Lok.tarpRez.size() + 1);
         std::cout << std::left << std::setw(20) << Lok.pavarde
         << std::setw(20) << Lok.vardas << std::setw(20)<< std::setprecision(2) << std::fixed <<
         vidurkis << std::endl;
