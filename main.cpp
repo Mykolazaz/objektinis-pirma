@@ -6,15 +6,7 @@ int main(){
     std::vector<Studentas> studentai;
     Studentas laikinasStud;
 
-    int studSk, vidMed, ivedGener;
-
-    std::cout << "Norite įvesti (0) ar generuoti (1)?: " << std::endl;
-    std::cin >> ivedGener;
-
-    if (ivedGener == 1){
-        generate();
-        exit(EXIT_SUCCESS);
-    }
+    int studSk, vidMed;
 
     std::cout << "Apie kiek studentų pildysite informaciją?:" << std::endl;
     std::cin >> studSk;
@@ -38,6 +30,6 @@ int main(){
     for (int i=0; i<studSk; i++){
         output(studentai.at(i), vidMed);
     }
-
+    
     return 0;
 }

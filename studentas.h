@@ -14,6 +14,5 @@ struct Studentas{
 void input(Studentas &Lok);
 void output(Studentas Lok, int vidMed);
 void clean(Studentas &Lok);
-void generate();
 
 #endif
